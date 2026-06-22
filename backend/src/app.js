@@ -7,6 +7,13 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+require('./config/db')
+
+// Rutas
+app.use('/api/auth', require('./routes/authRoutes'))
+app.use('/api/usuarios', require('./routes/usuariosRoutes'))
+app.use('/api/departamentos', require('./routes/departamentosRoutes'))
+
 app.get('/', (req, res) => {
   res.json({ message: 'SAP API funcionando' })
 })
@@ -15,3 +22,5 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`)
 })
+
+module.exports = app
