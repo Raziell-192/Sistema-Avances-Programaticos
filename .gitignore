@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Variables de entorno
+.env
+
+# Uploads
+backend/src/uploads/*
+!backend/src/uploads/.gitkeep
+
+# Vite
+frontend/dist/
+frontend/.vite/
+
+# macOS
+.DS_Store
