@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
-
+const path = require('path')
 const app = express()
 
 app.use(cors())
@@ -19,6 +19,9 @@ app.use('/api/periodos',     require('./routes/periodosRoutes'))
 app.use('/api/materias',     require('./routes/materiasRoutes'))
 app.use('/api/unidades',     require('./routes/unidadesRoutes'))
 app.use('/api/asignaciones', require('./routes/asignacionesRoutes'))
+app.use('/api/avances', require('./routes/avancesRoutes'))
+app.use('/api/evidencias', require('./routes/evidenciasRoutes'))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 app.get('/', (req, res) => {
   res.json({ message: 'SAP API funcionando ' })
