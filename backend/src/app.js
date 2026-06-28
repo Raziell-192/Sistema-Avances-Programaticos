@@ -24,6 +24,8 @@ app.use('/api/avances',       require('./routes/avancesRoutes'))
 app.use('/api/evidencias',    require('./routes/evidenciasRoutes'))
 app.use('/api/reportes',      require('./routes/reportesRoutes'))
 app.use('/api/dashboard',     require('./routes/dashboardRoutes'))
+app.use('/api/licenciaturas', require('./routes/licenciaturasRoutes'))
+app.use('/api/grupos',        require('./routes/gruposRoutes'))
 
 // Archivos estáticos
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))

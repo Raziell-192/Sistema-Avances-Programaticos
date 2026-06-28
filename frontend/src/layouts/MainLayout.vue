@@ -22,11 +22,35 @@
           <RouterLink to="/reportes" class="nav-item">
             <span>📈</span> Reportes
           </RouterLink>
+          <RouterLink to="/departamentos" class="nav-item">
+            <span>🏢</span> Departamentos
+          </RouterLink>
+          <RouterLink to="/periodos" class="nav-item">
+            <span>📅</span> Periodos
+          </RouterLink>
+          <RouterLink to="/grupos" class="nav-item">
+            <span>👨‍🎓</span> Grupos
+          </RouterLink>
+          <RouterLink to="/asignaciones" class="nav-item">
+            <span>🔗</span> Asignaciones
+          </RouterLink>
+          <RouterLink to="/planes" class="nav-item">
+            <span>📋</span> Planes de estudio
+          </RouterLink>
+          <RouterLink to="/unidades" class="nav-item">
+            <span>📖</span> Unidades temáticas
+          </RouterLink>
         </template>
 
         <template v-if="auth.rol === 'docente'">
           <RouterLink to="/avances" class="nav-item">
             <span>✏️</span> Mis Avances
+          </RouterLink>
+          <RouterLink to="/evidencias" class="nav-item">
+            <span>📎</span> Evidencias
+          </RouterLink>
+          <RouterLink to="/recopilatorio" class="nav-item">
+            <span>📊</span> Recopilatorio
           </RouterLink>
         </template>
 
