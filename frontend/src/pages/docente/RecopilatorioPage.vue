@@ -18,16 +18,16 @@
           <div>
             <h3>{{ mat.materia }}</h3>
             <span v-if="mat.semestre_completo" class="badge badge-success">
-              ✅ Semestre completo
+               Semestre completo
             </span>
             <span v-else class="badge badge-warning">
-              ⏳ {{ mat.total_reportes }}/4 reportes entregados
+               {{ mat.total_reportes }}/4 reportes entregados
             </span>
           </div>
           <div class="parciales-status">
             <div v-for="p in parciales" :key="p" class="parcial-chip"
               :class="mat.reportes_entregados?.includes(p) ? 'entregado' : 'pendiente'">
-              <span>{{ mat.reportes_entregados?.includes(p) ? '✅' : '⏳' }}</span>
+              <span>{{ mat.reportes_entregados?.includes(p) ? '' : '' }}</span>
               {{ p }}
             </div>
           </div>

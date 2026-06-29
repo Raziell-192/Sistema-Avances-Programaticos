@@ -2,7 +2,7 @@
   <div class="login-wrap">
     <div class="login-card">
       <div class="login-logo">
-        <span class="logo-icon">📊</span>
+        <span class="logo-icon"></span>
         <h1>SAP</h1>
         <p>Sistema de Avances Programáticos</p>
       </div>

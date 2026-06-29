@@ -16,7 +16,7 @@
           </span>
         </div>
         <div v-if="r.semestre_completo" class="badge badge-success" style="margin-top:8px">
-          ✅ Semestre completo
+           Semestre completo
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
 
         <!-- Sección 1: Identificación -->
         <div class="seccion">
-          <h4 class="seccion-title">📋 Identificación</h4>
+          <h4 class="seccion-title"> Identificación</h4>
           <div class="grid-2">
             <div class="form-group">
               <label>Número de avance *</label>
@@ -116,7 +116,7 @@
 
         <!-- Sección 2: Horas y porcentajes -->
         <div class="seccion">
-          <h4 class="seccion-title">📊 Horas y porcentajes</h4>
+          <h4 class="seccion-title"> Horas y porcentajes</h4>
           <div class="grid-2">
             <div class="form-group">
               <label>Horas efectivas</label>
@@ -147,7 +147,7 @@
 
         <!-- Sección 3: Calificaciones -->
         <div class="seccion">
-          <h4 class="seccion-title">🎓 Calificaciones del grupo</h4>
+          <h4 class="seccion-title"> Calificaciones del grupo</h4>
           <div class="grid-2">
             <div class="form-group">
               <label>Promedio del grupo</label>
@@ -178,7 +178,7 @@
 
         <!-- Sección 4: Contenido y recursos -->
         <div class="seccion">
-          <h4 class="seccion-title">📝 Contenido y recursos</h4>
+          <h4 class="seccion-title"> Contenido y recursos</h4>
           <div class="form-group">
             <label>Temas vistos durante el parcial *</label>
             <textarea v-model="form.temas_vistos" rows="4"
@@ -210,7 +210,7 @@
 
         <!-- Sección 5: Asesorías -->
         <div class="seccion">
-          <h4 class="seccion-title">🎯 Asesorías académicas</h4>
+          <h4 class="seccion-title"> Asesorías académicas</h4>
           <div class="form-group">
             <label>¿Ha impartido asesorías durante este periodo? *</label>
             <div class="radio-group">
@@ -250,7 +250,7 @@
 
         <!-- Sección 6: Evidencias obligatorias -->
         <div class="seccion">
-          <h4 class="seccion-title">📎 Evidencias obligatorias</h4>
+          <h4 class="seccion-title"> Evidencias obligatorias</h4>
 
           <div class="instrucciones-fechas">
             <strong>Instrucciones para lista de asistencia:</strong>
@@ -268,7 +268,7 @@
               accept=".pdf,.docx,.pptx,.jpg,.jpeg,.png" />
             <small class="text-muted">Formato: PDF, DOCX, PPTX, JPG, PNG — Máx. 10MB</small>
             <div v-if="archivoAsistencia" class="archivo-seleccionado">
-              ✅ {{ archivoAsistencia.name }}
+               {{ archivoAsistencia.name }}
             </div>
           </div>
 
@@ -282,7 +282,7 @@
                 accept=".pdf,.docx,.pptx,.jpg,.jpeg,.png,.xls,.xlsx,.ods" />
               <small class="text-muted">Formato: XLS, XLSX, ODS, PDF, JPEG, JPG</small>
               <div v-if="archivoAsesorias" class="archivo-seleccionado">
-                ✅ {{ archivoAsesorias.name }}
+                 {{ archivoAsesorias.name }}
               </div>
             </div>
           </template>
@@ -290,7 +290,7 @@
 
         <!-- Sección 7: Observaciones -->
         <div class="seccion">
-          <h4 class="seccion-title">💬 Observaciones</h4>
+          <h4 class="seccion-title"> Observaciones</h4>
           <div class="form-group">
             <label>Observaciones generales</label>
             <textarea v-model="form.observaciones_generales" rows="3"

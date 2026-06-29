@@ -3,60 +3,60 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-logo">
-        <span>📊</span>
-        <strong>SAP</strong>
+        <span></span>
+        <strong>SAP UNSIS</strong>
       </div>
 
       <nav class="sidebar-nav">
         <RouterLink to="/dashboard" class="nav-item">
-          <span>🏠</span> Dashboard
+          <span></span> Dashboard
         </RouterLink>
 
         <template v-if="auth.rol === 'administrador'">
           <RouterLink to="/usuarios" class="nav-item">
-            <span>👥</span> Usuarios
+            <span></span> Usuarios
           </RouterLink>
           <RouterLink to="/materias" class="nav-item">
-            <span>📚</span> Materias
+            <span></span> Materias
           </RouterLink>
           <RouterLink to="/reportes" class="nav-item">
-            <span>📈</span> Reportes
+            <span></span> Reportes
           </RouterLink>
           <RouterLink to="/departamentos" class="nav-item">
-            <span>🏢</span> Departamentos
+            <span></span> Departamentos
           </RouterLink>
           <RouterLink to="/periodos" class="nav-item">
-            <span>📅</span> Periodos
+            <span></span> Periodos
           </RouterLink>
           <RouterLink to="/grupos" class="nav-item">
-            <span>👨‍🎓</span> Grupos
+            <span></span> Grupos
           </RouterLink>
           <RouterLink to="/asignaciones" class="nav-item">
-            <span>🔗</span> Asignaciones
+            <span></span> Asignaciones
           </RouterLink>
           <RouterLink to="/planes" class="nav-item">
-            <span>📋</span> Planes de estudio
+            <span></span> Planes de estudio
           </RouterLink>
           <RouterLink to="/unidades" class="nav-item">
-            <span>📖</span> Unidades temáticas
+            <span></span> Unidades temáticas
           </RouterLink>
         </template>
 
         <template v-if="auth.rol === 'docente'">
           <RouterLink to="/avances" class="nav-item">
-            <span>✏️</span> Mis Avances
+            <span></span> Mis Avances
           </RouterLink>
           <RouterLink to="/evidencias" class="nav-item">
-            <span>📎</span> Evidencias
+            <span></span> Evidencias
           </RouterLink>
           <RouterLink to="/recopilatorio" class="nav-item">
-            <span>📊</span> Recopilatorio
+            <span></span> Recopilatorio
           </RouterLink>
         </template>
 
         <template v-if="auth.rol === 'jefe_departamento'">
           <RouterLink to="/reportes" class="nav-item">
-            <span>📈</span> Reportes
+            <span></span> Reportes
           </RouterLink>
         </template>
       </nav>

@@ -44,7 +44,7 @@
 
       <!-- Alertas -->
       <div class="card mt-16">
-        <h3 style="margin-bottom:16px;font-size:15px">⚠️ Alertas de retraso</h3>
+        <h3 style="margin-bottom:16px;font-size:15px"> Alertas de retraso</h3>
         <div v-if="data.alertas?.length === 0" class="text-muted">Sin alertas. Todo al corriente.</div>
         <table v-else>
           <thead>

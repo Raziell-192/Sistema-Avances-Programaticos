@@ -74,7 +74,7 @@
         <!-- Indicador de suma -->
         <div v-if="sumaOtrasUnidades !== null" :class="['alert', sumaTotal === 100 ? 'alert-success' : 'alert-error']">
           Suma actual de unidades: <strong>{{ sumaTotal }}%</strong>
-          {{ sumaTotal === 100 ? '✅ Correcto' : '— debe sumar 100%' }}
+          {{ sumaTotal === 100 ? ' Correcto' : '— debe sumar 100%' }}
         </div>
 
         <div class="modal-footer">
