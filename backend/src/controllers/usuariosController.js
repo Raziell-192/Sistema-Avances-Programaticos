@@ -88,4 +88,27 @@ const deleteUsuario = async (req, res) => {
   }
 }
 
-module.exports = { getUsuarios, createUsuario, updateUsuario, deleteUsuario }
+const toggleUsuario = async (req, res) => {
+  const { id } = req.params
+  try {
+    const actual = await pool.query(
+      `SELECT activo FROM usuarios WHERE id_usuario=$1`, [id]
+    )
+    if (actual.rows.length === 0)
+      return res.status(404).json({ error: 'Usuario no encontrado' })
+
+    const nuevoEstado = !actual.rows[0].activo
+    const result = await pool.query(
+      `UPDATE usuarios SET activo=$1 WHERE id_usuario=$2 RETURNING id_usuario, activo`,
+      [nuevoEstado, id]
+    )
+    res.json({
+      message: nuevoEstado ? 'Usuario activado correctamente' : 'Usuario desactivado correctamente',
+      activo: result.rows[0].activo
+    })
+  } catch (err) {
+    res.status(500).json({ error: 'Error al cambiar estado del usuario' })
+  }
+}
+
+module.exports = { getUsuarios, createUsuario, updateUsuario, deleteUsuario, toggleUsuario }

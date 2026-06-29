@@ -9,17 +9,39 @@
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Nombre</th><th>Correo</th><th>Rol</th><th>Estado</th><th>Acciones</th></tr>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="u in usuarios" :key="u.id_usuario">
               <td>{{ u.nombre }}</td>
               <td>{{ u.correo }}</td>
               <td><span class="badge badge-info">{{ u.rol }}</span></td>
-              <td><span :class="u.activo ? 'badge badge-success' : 'badge badge-danger'">{{ u.activo ? 'Activo' : 'Inactivo' }}</span></td>
               <td>
-                <button class="btn btn-ghost btn-sm" @click="abrirModal(u)">Editar</button>
-                <button class="btn btn-danger btn-sm" style="margin-left:6px" @click="eliminar(u.id_usuario)">Desactivar</button>
+                <span :class="u.activo ? 'badge badge-success' : 'badge badge-danger'">
+                  {{ u.activo ? 'Activo' : 'Inactivo' }}
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-ghost btn-sm" @click="abrirModal(u)">
+                  Editar
+                </button>
+                <button
+                  :class="u.activo ? 'btn btn-danger btn-sm' : 'btn btn-primary btn-sm'"
+                  style="margin-left:6px"
+                  @click="toggle(u.id_usuario, u.activo)">
+                  {{ u.activo ? 'Desactivar' : 'Activar' }}
+                </button>
+              </td>
+            </tr>
+            <tr v-if="usuarios.length === 0">
+              <td colspan="5" class="text-muted" style="text-align:center;padding:24px">
+                No hay usuarios registrados
               </td>
             </tr>
           </tbody>
@@ -44,7 +66,9 @@
           <input v-model="form.correo" type="email" placeholder="correo@sap.edu.mx" />
         </div>
         <div class="form-group">
-          <label>{{ form.id_usuario ? 'Nueva contraseña (dejar vacío para no cambiar)' : 'Contraseña' }}</label>
+          <label>
+            {{ form.id_usuario ? 'Nueva contraseña (dejar vacío para no cambiar)' : 'Contraseña' }}
+          </label>
           <input v-model="form.password" type="password" placeholder="••••••••" />
         </div>
         <div class="form-group">
@@ -66,7 +90,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { getUsuarios, createUsuario, updateUsuario, deleteUsuario } from '../../services/usuariosService'
+import { getUsuarios, createUsuario, updateUsuario, toggleUsuario } from '../../services/usuariosService'
 
 const usuarios = ref([])
 const modal    = ref(false)
@@ -101,9 +125,10 @@ const guardar = async () => {
   }
 }
 
-const eliminar = async (id) => {
-  if (!confirm('¿Desactivar este usuario?')) return
-  await deleteUsuario(id)
+const toggle = async (id, activo) => {
+  const accion = activo ? 'desactivar' : 'activar'
+  if (!confirm(`¿Deseas ${accion} este usuario?`)) return
+  await toggleUsuario(id)
   await cargar()
 }
 
